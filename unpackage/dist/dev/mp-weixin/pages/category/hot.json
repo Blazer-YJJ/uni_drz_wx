@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "热卖商品",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

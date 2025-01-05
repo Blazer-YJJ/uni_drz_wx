@@ -1,0 +1,339 @@
+
+	/* 基础动画 */
+@keyframes fadeInUp {
+from {
+			opacity: 0;
+			transform: translateY(30rpx);
+}
+to {
+			opacity: 1;
+			transform: translateY(0);
+}
+}
+@keyframes scaleIn {
+from {
+			opacity: 0;
+			transform: scale(0.95);
+}
+to {
+			opacity: 1;
+			transform: scale(1);
+}
+}
+@keyframes slideInRight {
+from {
+			transform: translateX(-30rpx);
+			opacity: 0;
+}
+to {
+			transform: translateX(0);
+			opacity: 1;
+}
+}
+
+	/* 容器样式 */
+.container {
+		min-height: 100vh;
+		background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+		padding-bottom: env(safe-area-inset-bottom);
+}
+
+	/* 顶部标题栏 */
+.header-bar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		background: rgba(255, 255, 255, 0.8);
+		-webkit-backdrop-filter: blur(20px);
+		        backdrop-filter: blur(20px);
+		animation: fadeInUp 0.6s ease-out;
+}
+.header-content {
+		padding: 50rpx 30rpx;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 4rpx;
+}
+.main-title {
+		font-size: 36rpx;
+		color: #1d1d1f;
+		font-weight: 600;
+		font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display';
+		letter-spacing: 0.5px;
+}
+.sub-title {
+		font-size: 24rpx;
+		color: #86868b;
+		font-weight: 400;
+}
+
+	/* 轮播图区域 */
+.banner-section {
+		margin: 20rpx 30rpx;
+		margin-top: var(--3c41f844);
+		border-radius: 30rpx;
+		overflow: hidden;
+		box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.08);
+		animation: scaleIn 0.6s ease-out;
+}
+.banner-swiper {
+		height: 360rpx;
+}
+.banner-card {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+}
+.banner-image {
+		width: 100%;
+		height: 100%;
+		transform: scale(1.01);
+		transition: transform 0.3s ease;
+}
+.banner-info {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 40rpx 30rpx;
+		background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 100%);
+}
+.banner-title {
+		font-size: 32rpx;
+		color: #ffffff;
+		font-weight: 600;
+		text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.2);
+}
+
+	/* 分类导航 */
+.category-nav {
+		display: flex;
+		justify-content: space-around;
+		padding: 20rpx;
+		margin: 20rpx 30rpx;
+		background: rgba(255, 255, 255, 0.9);
+		border-radius: 20rpx;
+		box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.04);
+		animation: fadeInUp 0.6s ease-out;
+}
+.category-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 10rpx;
+		flex: 1;
+}
+.category-icon {
+		width: 90rpx;
+		height: 90rpx;
+		background: #f5f5f7;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 12rpx;
+		transition: all 0.3s ease;
+		box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.06);
+		position: relative;
+		overflow: hidden;
+}
+.category-icon::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+		border-radius: 50%;
+}
+.category-icon-image {
+		width: 80rpx;
+		height: 80rpx;
+		object-fit: contain;
+}
+.category-icon:active {
+		transform: scale(0.92);
+		background: #ebebeb;
+}
+.category-name {
+		font-size: 24rpx;
+		color: #333333;
+		font-weight: 500;
+		margin-top: 8rpx;
+		text-align: center;
+		width: 100%;
+}
+
+	/* 热门商品区域 */
+.hot-section {
+		margin: 20rpx 30rpx;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 30rpx;
+		overflow: hidden;
+		box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.06);
+		animation: scaleIn 0.8s ease-out;
+}
+.hot-scroll {
+		padding: 20rpx;
+}
+.hot-list {
+		display: flex;
+		padding: 10rpx;
+}
+.hot-item {
+		margin-right: 24rpx;
+		animation: slideInRight 0.6s ease-out;
+}
+.hot-card {
+		width: 280rpx;
+		background: #ffffff;
+		border-radius: 20rpx;
+		overflow: hidden;
+		box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.04);
+		transition: transform 0.3s ease;
+}
+.hot-card:active {
+		transform: scale(0.98);
+}
+.hot-image {
+		width: 280rpx;
+		height: 280rpx;
+		border-radius: 20rpx 20rpx 0 0;
+}
+.hot-info {
+		padding: 20rpx;
+}
+.hot-name {
+		font-size: 28rpx;
+		color: #1d1d1f;
+		font-weight: 600;
+		margin-bottom: 12rpx;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		display: block;
+}
+.hot-price-box {
+		display: flex;
+		align-items: baseline;
+		margin-bottom: 8rpx;
+}
+.price-symbol {
+		font-size: 24rpx;
+		color: #1d1d1f;
+		margin-right: 4rpx;
+}
+.hot-price {
+		font-size: 36rpx;
+		color: #1d1d1f;
+		font-weight: 600;
+}
+.hot-sold {
+		font-size: 24rpx;
+		color: #86868b;
+}
+
+	/* 推荐商品区域 */
+.index-recommend-section {
+		padding: 20rpx;
+		background: #fff;
+}
+.index-recommend-title {
+		font-size: 32rpx;
+		font-weight: bold;
+		margin-bottom: 20rpx;
+		color: #333;
+}
+.index-recommend-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20rpx;
+}
+.index-recommend-card {
+		background: #fff;
+		border-radius: 12rpx;
+		overflow: hidden;
+		box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+.index-recommend-image {
+		width: 100%;
+		height: 300rpx;
+		background: #f5f5f5;
+}
+.index-recommend-info {
+		padding: 16rpx;
+}
+.index-recommend-name {
+		font-size: 28rpx;
+		color: #333;
+		margin-bottom: 8rpx;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+}
+.index-recommend-desc {
+		font-size: 24rpx;
+		color: #999;
+		margin-bottom: 8rpx;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+		overflow: hidden;
+}
+.index-recommend-bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 8rpx;
+}
+.index-recommend-price {
+		font-size: 32rpx;
+		color: #ff6b81;
+		font-weight: bold;
+}
+.index-recommend-stock {
+		font-size: 24rpx;
+		color: #999;
+}
+
+	/* 加载状态 */
+.loading-container {
+		padding: 40rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+}
+
+	/* 通用样式 */
+.section-header {
+		padding: 30rpx;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 0.5px solid rgba(0,0,0,0.1);
+}
+.section-title {
+		font-size: 34rpx;
+		color: #1d1d1f;
+		font-weight: 600;
+		font-family: -apple-system, SF Pro Display;
+}
+.section-more {
+		display: flex;
+		align-items: center;
+		font-size: 26rpx;
+		color: #0066cc;
+		font-weight: 500;
+}
+.section-more text {
+		margin-left: 4rpx;
+}

@@ -1,0 +1,237 @@
+
+.container {
+  min-height: 100vh;
+  background: #fff;
+  padding-top: calc(var(--status-bar-height) + 44px);
+}
+
+/* 商品画廊 */
+.gallery {
+  width: 100%;
+  height: 100vw;
+  position: relative;
+  background: #f5f5f7;
+  margin-top: 0;
+}
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40rpx;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+}
+.gallery-price {
+  font-size: 56rpx;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-family: -apple-system, SF Pro Display;
+}
+
+/* 商品信息 */
+.product-info {
+  padding: 32rpx;
+}
+.info-section {
+  margin-bottom: 48rpx;
+}
+.info-section:last-child {
+  margin-bottom: 160rpx;
+}
+.product-name {
+  font-size: 40rpx;
+  color: #1d1d1f;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 16rpx;
+  font-family: -apple-system, SF Pro Display;
+}
+.product-meta {
+  display: flex;
+  align-items: center;
+  margin-top: 16rpx;
+}
+.meta-item {
+  font-size: 28rpx;
+  color: #86868b;
+}
+.meta-divider {
+  margin: 0 12rpx;
+  color: #86868b;
+}
+.section-title {
+  font-size: 32rpx;
+  color: #1d1d1f;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+  font-family: -apple-system, SF Pro Text;
+}
+.product-desc {
+  padding: 20rpx 24rpx;
+  background: #f5f5f7;
+  border-radius: 16rpx;
+}
+.desc-line {
+  font-size: 30rpx;
+  color: #424245;
+  line-height: 1.6;
+  font-family: -apple-system, SF Pro Text;
+  display: block;
+  margin-bottom: 16rpx;
+}
+.desc-line:last-child {
+  margin-bottom: 0;
+}
+.delivery-info {
+  background: #f5f5f7;
+  padding: 24rpx;
+  border-radius: 16rpx;
+}
+.delivery-text {
+  font-size: 28rpx;
+  color: #1d1d1f;
+  display: block;
+  margin-bottom: 8rpx;
+}
+.delivery-tip {
+  font-size: 24rpx;
+  color: #86868b;
+}
+
+/* 底部操作栏 */
+.action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24rpx 32rpx;
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-top: 0.5px solid rgba(0,0,0,0.1);
+  z-index: 100;
+}
+.action-button {
+  width: 100%;
+  height: 96rpx;
+  background: #0071e3;
+  border-radius: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.action-button:active {
+  transform: scale(0.98);
+  background: #0077ED;
+}
+.button-text {
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 500;
+  font-family: -apple-system, SF Pro Text;
+}
+.button-disabled {
+  background: #86868b;
+  opacity: 0.6;
+}
+
+/* 加载状态 */
+.loading-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.order-form {
+  background: #f5f5f7;
+  padding: 24rpx;
+  border-radius: 16rpx;
+}
+.form-item {
+  margin-bottom: 24rpx;
+}
+.form-item:last-child {
+  margin-bottom: 0;
+}
+.form-label {
+  font-size: 28rpx;
+  color: #1d1d1f;
+  margin-bottom: 12rpx;
+  display: block;
+  font-family: -apple-system, SF Pro Text;
+}
+.form-input {
+  width: 100%;
+  height: 88rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 0 24rpx;
+  font-size: 30rpx;
+  color: #1d1d1f;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(0,113,227,0.1);
+}
+.input-placeholder {
+  color: #86868b;
+  font-size: 30rpx;
+}
+
+/* 顶部导航栏 */
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	background: rgba(255, 255, 255, 0.85);
+	-webkit-backdrop-filter: blur(20px);
+	        backdrop-filter: blur(20px);
+	border-bottom: 0.5px solid rgba(0,0,0,0.1);
+}
+.nav-bar {
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 16px;
+	position: relative;
+}
+.back-arrow {
+	color: #007AFF;
+	font-size: 38px;
+	font-family: SF Pro Text;
+	line-height: 1;
+	font-weight: 300;
+}
+.back-button {
+	position: absolute;
+	left: 16px;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.title {
+	font-size: 17px;
+	font-weight: 600;
+	color: #1d1d1f;
+}
+
+/* 内容区域不需要重复添加顶部内边距 */
+.content {
+  padding-top: 0;
+}

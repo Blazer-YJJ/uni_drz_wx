@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "折扣专区",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}
